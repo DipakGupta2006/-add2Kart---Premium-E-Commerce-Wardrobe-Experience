@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>add2Kart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+
+            background: hsla(280, 95%, 57%, 1);
+
+            background: linear-gradient(90deg,
+                    hsla(280, 95%, 57%, 1) 0%,
+                    hsla(193, 90%, 55%, 1) 100%);
+
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+
+        }
+
+
+
+        /* floating icons */
+
+        .background-icons span {
+
+            position: absolute;
+            font-size: 60px;
+            opacity: 0.15;
+            animation: float 8s infinite;
+
+        }
+
+
+        .background-icons span:nth-child(1) {
+            top: 10%;
+            left: 10%;
+        }
+
+        .background-icons span:nth-child(2) {
+            top: 20%;
+            right: 15%;
+        }
+
+        .background-icons span:nth-child(3) {
+            top: 60%;
+            left: 8%;
+        }
+
+        .background-icons span:nth-child(4) {
+            top: 70%;
+            right: 10%;
+        }
+
+        .background-icons span:nth-child(5) {
+            top: 40%;
+            left: 45%;
+        }
+
+        .background-icons span:nth-child(6) {
+            top: 80%;
+            left: 50%;
+        }
+
+        .background-icons span:nth-child(7) {
+            top: 15%;
+            left: 70%;
+        }
+
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+
+        }
+
+
+
+
+        header {
+
+            padding: 25px 8%;
+
+        }
+
+
+        nav {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+
+        nav h2 {
+
+            font-size: 32px;
+
+        }
+
+
+        nav a {
+
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+
+        }
+
+
+
+
+        .hero {
+
+            padding: 80px 8%;
+
+        }
+
+
+        .content {
+
+            max-width: 650px;
+
+        }
+
+
+        .tag {
+
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+
+
+        h1 {
+
+            font-size: 70px;
+            line-height: 1.1;
+            margin: 20px 0;
+
+        }
+
+
+        .content p {
+
+            font-size: 20px;
+            line-height: 1.6;
+
+        }
+
+
+        a {
+
+            margin-top: 30px;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            cursor: pointer;
+
+        }
+
+
+        .outline {
+
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            margin-left: 15px;
+
+        }
+
+
+
+        .features {
+
+            background: white;
+            color: #222;
+            padding: 70px 8%;
+            text-align: center;
+
+        }
+
+
+        .features h2 {
+
+            font-size: 40px;
+
+        }
+
+
+
+
+
+
+        .features-section {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 70px 8%;
+            border-radius: 40px 40px 0 0;
+            margin-top: 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: #b429f9;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            border-left: 5px solid #26c5f3;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-left-color: #b429f9;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #111;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .content a {
+
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-top: 30px;
+
+            padding: 15px 35px;
+
+            border-radius: 30px;
+
+            font-size: 17px;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            background: white;
+
+            color: #9c27f9;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+        }
+
+
+
+        .content a:hover {
+
+            transform: scale(1.05);
+
+        }
+
+
+
+        /* Second Button Style */
+
+        .content a.outline {
+
+            background: transparent;
+
+            border: 2px solid white;
+
+            color: white;
+
+            margin-left: 15px;
+
+        }
+
+
+
+        .content a.outline:hover {
+
+            background: white;
+
+            color: #9c27f9;
+
+        }
+
+
+
+        /* Icon alignment */
+
+        .content a i {
+
+            font-size: 18px;
+
+        }
+
+
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="background-icons">
+
+        <span><i class="fa-solid fa-shirt"></i></span>
+        <span><i class="fa-solid fa-vest"></i></span>
+        <span><i class="fa-solid fa-socks"></i></span>
+        <span><i class="fa-solid fa-vest-patches"></i></span>
+        <span><i class="fa-solid fa-hat-cowboy"></i></span>
+        <span><i class="fa-solid fa-glasses"></i></span>
+    </div>
+
+
+    <header>
+        <nav>
+            <h2>add2Kart</h2>
+
+            <div>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+
+        <div class="content">
+
+            <p class="tag">
+                Fashion · Built for Everyone
+            </p>
+
+            <h1>
+                Discover your
+                <br>
+                perfect style
+            </h1>
+
+            <p>
+                Shop trendy clothes, premium collections, and everyday essentials
+                — all in one modern shopping experience.
+            </p>
+
+
+            <a href="/register">
+                Start Shopping Today
+                <i class="fa-brands fa-opencart"></i>
+            </a>
+
+
+            <a href="/login" class="outline">
+                Already a customer?
+                <i class="fa-solid fa-user"></i>
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+    <section class="features-section">
+        <div class="section-title">
+            <h2>All the drip, none of the hype.</h2> <!-- Yahan badla hai -->
+            <p style="color: #666; margin-top: 10px;">Premium street style designed for your everyday vibe.</p>
+        </div>
+
+        <div class="grid">
+            <!-- Box 1 -->
+            <div class="card">
+                <h3>Trend Tracking</h3>
+                <p>Grab any outfit in seconds. Categorize by fit, style, and payment type — Cash, UPI, or Card accepted.
+                </p>
+            </div>
+            <!-- Box 3 -->
+            <div class="card">
+                <h3>Easy Returns</h3>
+                <p>Track your exchange status or refunds instantly. Smooth settlements with zero hassle when you're
+                    done.</p>
+            </div>
+            <!-- Box 4 -->
+            <div class="card">
+                <h3>Smart Fits</h3>
+                <p>See clothes grouped by collection or season. Spot premium patterns and designs instantly.</p>
+            </div>
+            <!-- Box 5 -->
+            <div class="card">
+                <h3>Secure Checkout</h3>
+                <p>Your shopping data stays yours. Secure session cookies, encrypted payments, and no third-party
+                    trackers.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        © 2026 add2Kart — Your style, your choice.
+    </footer>
+
+
+</body>
+
+</html>
