@@ -11,6 +11,7 @@ const bcrypt = require("bcrypt");
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
 app.use(express.json());
 app.use(session({
     secret: process.env.SESSION_SECRET || "keyboard cat",
@@ -18,8 +19,31 @@ app.use(session({
     saveUninitialized: false,
     cookie: { maxAge: 1000 * 60 * 60 }
 }));
-app.set("view engine", "ejs");
 
+app.use((req, res, next) => {
+
+    res.setHeader(
+        "Cache-Control",
+        "no-store, no-cache, must-revalidate, private"
+    );
+
+    res.setHeader(
+        "Pragma",
+        "no-cache"
+    );
+
+    res.setHeader(
+        "Expires",
+        "0"
+    );
+
+    next();
+
+});
+
+const isAuthenticated = require("./middleware/auth");
+
+const home = require("./routes/home");
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -95,10 +119,18 @@ app.post("/login", async (req, res) => {
     }
 });
 
+app.get("/logout", (req,res)=>{
+    req.session.destroy((err)=>{
+        if(err){
+            console.log(err);
+            return res.status(500).send("Logout failed");
+        }
+        res.clearCookie("connect.sid");
+        res.redirect("/login");
+    });
+});
 
-app.get('/home', (req, res) => {
-    res.render('home');
-})
+app.use(home);
 
 
 app.listen(port, () => {

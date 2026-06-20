@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap');
+
+
+
+.navbar{
+
+    height:80px;
+
+    padding:0 7%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    background:white;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+/* Logo */
+
+.logo a{
+
+    text-decoration:none;
+
+    font-family:"Pacifico", cursive;
+
+    font-size:38px;
+
+    color:#9b2cff;
+
+    letter-spacing:1px;
+
+}
+
+
+
+/* Middle Links */
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:40px;
+
+    list-style:none;
+
+}
+
+
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-links a:hover{
+
+    color:#a12af7;
+
+}
+
+
+
+/* Right Icons */
+
+
+.nav-icons{
+
+    display:flex;
+
+    gap:25px;
+
+}
+
+
+
+.nav-icons a{
+
+    color:#333;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+
+
+.nav-icons a:hover{
+
+    color:#a12af7;
+
+    transform:translateY(-3px);
+
+}
+
+.fa-right-from-bracket{
+    color: rgb(243, 64, 64);
+}
