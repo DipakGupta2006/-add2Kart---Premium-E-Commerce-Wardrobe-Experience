@@ -45,6 +45,7 @@ const isAuthenticated = require("./middleware/auth");
 
 const home = require("./routes/home");
 const productRoutes = require("./routes/productRoutes");
+const collection = require("./routes/collection");
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -133,6 +134,7 @@ app.get("/logout", (req,res)=>{
 
 app.use(home);
 app.use(productRoutes);
+app.use(collection);
 
 
 app.listen(port, () => {

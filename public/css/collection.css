@@ -1,0 +1,291 @@
+.collection-section{
+
+    padding:50px 2%;
+
+}
+
+
+
+.collection-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+   
+
+}
+
+
+
+.collection-title p{
+
+    font-family:"Pacifico",cursive;
+
+    font-size:52px;
+    margin-top: -20px;
+
+    color:#a52af7;
+
+}
+
+
+
+.collection-title h1{
+
+    font-size:42px;
+
+    margin:15px 0;
+
+}
+
+
+
+.collection-title span{
+
+    color:#777;
+
+}
+
+
+
+
+
+.collection-container{
+
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+
+}
+
+
+
+
+
+.collection-card{
+
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+
+
+}
+
+
+.product-image{
+
+
+    height:510px;
+
+    position:relative;
+
+
+}
+
+
+
+.product-image img{
+
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+
+}
+
+.product-info{
+
+
+    padding:16px;
+
+
+}
+
+
+
+.product-info h3{
+
+
+    font-size:16px;
+
+    color:#333;
+
+    height:45px;
+    /* width: 100%; */
+
+    overflow:hidden;
+margin-top:4px;
+
+
+}
+
+
+
+
+.product-info p{
+margin-top: -16px;
+margin-bottom: 5px;
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#a52af7;
+
+
+}
+
+
+
+
+
+
+.product-info a,
+.product-info button{
+
+    width:100%;
+
+    padding:12px 2px;
+
+    margin-top:12px;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    transition:0.3s;
+
+}
+
+
+
+/* View Product */
+
+.view-btn{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        90deg,
+        hsla(280,95%,57%,1),
+        hsla(193,90%,55%,1)
+    );
+
+}
+
+
+
+
+
+.view-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 8px 20px rgba(180,40,249,0.3);
+
+}
+
+
+
+
+
+/* Cart Button */
+
+.cart-btn{
+
+    border:none;
+
+    background:#222;
+
+    color:white;
+
+}
+
+
+
+
+
+.cart-btn:hover{
+
+    background:#a52af7;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+
+/* Wishlist Button */
+
+.wishlist-btn{
+
+    border:2px solid #ff4d6d;
+
+    background:white;
+
+    color:#ff4d6d;
+
+}
+
+
+
+
+
+.wishlist-btn:hover{
+
+    background:#ff4d6d;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* Icons */
+
+.product-info i{
+
+    font-size:16px;
+
+}
+
+.line {
+    border: 1px solid rgb(118, 113, 113);
+    border-radius: 50%;
+    width: 90%;
+    margin: auto;
+    top: 30px;
+
+}
