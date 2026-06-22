@@ -140,6 +140,10 @@ app.get("/about", isAuthenticated, (req, res) => {
     res.render("about");
 });
 
+app.get("/contact", isAuthenticated, (req, res) => {
+    res.render("contact");
+});
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
