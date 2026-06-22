@@ -136,6 +136,10 @@ app.use(home);
 app.use(productRoutes);
 app.use(collection);
 
+app.get("/about", isAuthenticated, (req, res) => {
+    res.render("about");
+});
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
