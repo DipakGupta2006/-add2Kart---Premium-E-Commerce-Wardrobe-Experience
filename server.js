@@ -46,6 +46,7 @@ const isAuthenticated = require("./middleware/auth");
 const home = require("./routes/home");
 const productRoutes = require("./routes/productRoutes");
 const collection = require("./routes/collection");
+const wishlistRoutes = require("./routes/wishlistRoutes");
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -112,7 +113,7 @@ app.post("/login", async (req, res) => {
             return res.status(401).send("Invalid username or password.");
         }
         req.session.username = user.username;
-        req.session.userId = user.id;
+        req.session.user_id = user.id;
         return res.redirect("/home");
     }
     catch (error) {
@@ -135,6 +136,7 @@ app.get("/logout", (req,res)=>{
 app.use(home);
 app.use(productRoutes);
 app.use(collection);
+app.use(wishlistRoutes);
 
 app.get("/about", isAuthenticated, (req, res) => {
     res.render("about");

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>
+        My Wishlist | add2Kart
+    </title>
+
+
+    <link rel="stylesheet" href="/css/wishlist.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+
+
+<body>
+
+    <%- include("partials/navbar") %>
+
+
+
+
+        <section class="wishlist-section">
+
+
+            <div class="wishlist-title">
+
+                <h1>
+                    My Wishlist ❤️
+                </h1>
+
+                <p>
+                    Your favourite products saved for later
+                </p>
+
+            </div>
+
+
+
+
+
+            <div class="wishlist-container">
+
+
+
+                <% products.forEach(product=> { %>
+
+
+
+                    <div class="wishlist-card">
+
+
+
+                        <!-- Product Image -->
+
+                        <div class="wishlist-image">
+
+
+                            <img src="<%= product.image %>" alt="<%= product.product_name %>">
+
+
+                        </div>
+
+
+
+
+
+                        <!-- Product Details -->
+
+                        <div class="wishlist-details">
+
+
+                            <h2>
+                                <%= product.product_name %>
+                            </h2>
+
+
+
+                            <p class="brand">
+
+                                <i class="fa-solid fa-tag"></i>
+
+                                <%= product.brand || "Premium Brand" %>
+
+                            </p>
+
+                            <p class="brand">
+
+                                <%= product.category || "Unknown" %>
+
+                            </p>
+
+                            <p class="brand">
+
+                                Size Available in: <%= product.size || "Unknown" %>
+
+                            </p>
+
+
+
+
+                            <h3>
+
+                                <%= product.price %>
+
+                            </h3>
+
+
+
+
+                            <div class="rating">
+
+
+                                ⭐⭐⭐⭐⭐
+
+                                <span>
+                                    (4.8/5 | 250 Reviews)
+                                </span>
+
+
+                            </div>
+
+
+
+
+                            <p class="description">
+
+                                Premium quality product with stylish
+                                design and comfortable fabric.
+
+                            </p>
+
+
+
+                        </div>
+
+
+
+
+
+                        <!-- Buttons -->
+
+
+                        <div class="wishlist-actions">
+
+
+                            <button class="cart-btn">
+
+                                <i class="fa-solid fa-cart-shopping"></i>
+
+                                Add To Cart
+
+                            </button>
+
+
+
+
+                            <form action="/wishlist/remove" method="POST">
+
+
+                                <input type="hidden" name="product_id" value="<%= product.id %>">
+
+
+                                <button class="remove-btn">
+
+
+                                    <i class="fa-solid fa-trash"></i>
+
+                                    Remove
+
+
+                                </button>
+
+
+                            </form>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <% }) %>
+
+
+
+            </div>
+
+
+
+        </section>
+
+
+        <%- include("partials/footer") %>
+
+</body>
+
+</html>

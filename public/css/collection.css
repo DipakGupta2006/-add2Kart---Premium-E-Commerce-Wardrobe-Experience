@@ -1,6 +1,6 @@
 .collection-section{
 
-    padding:50px 2%;
+    padding:50px 4%;
 
 }
 
@@ -57,7 +57,7 @@
 
     grid-template-columns:repeat(4,1fr);
 
-    gap:20px;
+    gap:40px;
 
 
 }
@@ -86,7 +86,7 @@
 .product-image{
 
 
-    height:510px;
+    height:460px;
 
     position:relative;
 

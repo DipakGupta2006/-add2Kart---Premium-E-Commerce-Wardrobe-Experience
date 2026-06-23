@@ -1,0 +1,334 @@
+
+
+
+body {
+
+    font-family: "Poppins", sans-serif;
+
+    background: #f7f7fb;
+
+}
+
+
+
+
+.wishlist-section {
+
+    padding: 60px 5%;
+
+}
+
+
+
+
+.wishlist-title {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.wishlist-title h1 {
+    font-size: 40px;
+    color: #b429f9;
+}
+
+
+
+.wishlist-title p {
+
+    color: #777;
+
+    margin-top: 10px;
+
+}
+
+
+
+
+
+
+
+.wishlist-container {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 45px;
+
+}
+
+
+
+
+
+.wishlist-card {
+
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+
+    display: flex;
+
+    align-items: center;
+
+
+    gap: 30px;
+
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+
+    transition: 0.3s;
+
+
+}
+
+
+
+
+
+.wishlist-image {
+
+
+    width: 270px;
+
+    height: 350px;
+
+    flex-shrink: 0;
+
+
+}
+
+
+
+.wishlist-image img {
+
+
+    width: 100%;
+
+    height: 100%;
+
+
+    object-fit: cover;
+
+
+    border-radius: 15px;
+
+
+}
+
+
+
+
+
+.wishlist-details {
+
+
+    flex: 1;
+
+
+}
+
+
+
+.wishlist-details h2 {
+
+
+    font-size: 22px;
+
+    color: #333;
+
+    margin-bottom: 12px;
+
+
+}
+
+
+
+
+
+.brand {
+
+
+    color: #777;
+
+    margin-bottom: 10px;
+
+
+}
+
+
+
+
+
+.wishlist-details h3 {
+
+
+    font-size: 28px;
+
+    color: #a52af7;
+
+    margin-bottom: 12px;
+
+
+}
+
+
+
+
+
+.rating {
+
+
+    color: #ff9800;
+
+    margin-bottom: 15px;
+
+
+}
+
+
+
+
+.rating span {
+
+    color: #666;
+
+    font-size: 14px;
+
+}
+
+
+
+
+
+.description {
+
+
+    color: #666;
+
+    line-height: 1.5;
+
+}
+
+
+
+
+
+
+
+.wishlist-actions {
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+
+.wishlist-actions button {
+
+
+    width: 170px;
+
+    padding: 14px;
+
+
+    border: none;
+
+    border-radius: 12px;
+
+
+    cursor: pointer;
+
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+
+}
+
+
+
+
+
+.cart-btn {
+
+
+    color: white;
+
+
+    background:
+
+        linear-gradient(90deg,
+            hsla(280, 95%, 57%, 1),
+            hsla(193, 90%, 55%, 1));
+
+
+}
+
+
+
+
+.remove-btn {
+
+
+    background: #fff;
+
+    border: 1px solid #ddd !important;
+
+    color: #e53935;
+
+
+}
+
+
+
+
+
+
+
+@media(max-width:900px) {
+
+
+    .wishlist-card {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+
+    .wishlist-actions {
+
+        width: 100%;
+
+    }
+
+
+
+    .wishlist-actions button {
+
+        width: 100%;
+
+    }
+
+
+}
