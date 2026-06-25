@@ -1,24 +1,24 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 
-body{
+body {
 
-    background:#f5f5f5;
+    background: #f5f5f5;
 
 }
 
 
 
-.admin-container{
+.admin-container {
 
-    display:flex;
-    min-height:100vh;
+    display: flex;
+    min-height: 100vh;
 
 }
 
@@ -27,70 +27,75 @@ body{
 /* Sidebar */
 
 
-.sidebar{
+.sidebar {
 
-    width:260px;
-    background:#000;
-    color:white;
-    padding:25px;
-    display:flex;
-    flex-direction:column;
-
-}
-
-
-
-.logo{
-
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:40px;
-    text-align:center;
+    width: 260px;
+    background: #000;
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
 
 }
 
 
 
-.sidebar ul{
+.logo {
 
-    list-style:none;
-
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family:"Pacifico",cursive;
+    font-size:35px;
+    /* margin-bottom:15px; */
+    /* margin-top:15px; */
 }
 
 
 
-.sidebar li{
+.sidebar ul {
 
-    padding:15px;
-    margin-bottom:10px;
-    border-radius:8px;
-    cursor:pointer;
-    color:#ccc;
+    list-style: none;
+    
+}
+
+
+
+.sidebar li {
+
+/* font-family:"Pacifico",cursive; */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ccc;
 
 }
 
 
 
 .sidebar li:hover,
-.sidebar .active{
+.sidebar .active {
 
-    background:white;
-    color:black;
+    background: white;
+    color: black;
 
 }
 
 
 
-.logout{
+.logout {
 
-    margin-top:auto;
-    padding:12px;
-    background:white;
-    color:black;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:bold;
+    margin-top: auto;
+    padding: 12px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
 
 }
 
@@ -101,40 +106,40 @@ body{
 /* Main */
 
 
-.main{
+.main {
 
-    flex:1;
-    padding:30px;
-
-}
-
-
-
-.topbar{
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:30px;
+    flex: 1;
+    padding: 30px;
 
 }
 
 
 
-.topbar h1{
+.topbar {
 
-    font-size:30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
 
 }
 
 
 
-.admin-profile{
+.topbar h1 {
 
-    background:black;
-    color:white;
-    padding:12px 25px;
-    border-radius:20px;
+    font-size: 30px;
+
+}
+
+
+
+.admin-profile {
+
+    background: black;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 20px;
 
 }
 
@@ -144,41 +149,41 @@ body{
 /* Cards */
 
 
-.cards{
+.cards {
 
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-
-}
-
-
-
-.card{
-
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 
 }
 
 
 
-.card h3{
+.card {
 
-    color:#555;
-    font-size:16px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 
 }
 
 
 
-.card p{
+.card h3 {
 
-    font-size:30px;
-    font-weight:bold;
-    margin-top:15px;
+    color: #555;
+    font-size: 16px;
+
+}
+
+
+
+.card p {
+
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 15px;
 
 }
 
@@ -188,48 +193,48 @@ body{
 /* Table */
 
 
-.table-section{
+.table-section {
 
-    margin-top:40px;
-    background:white;
-    padding:25px;
-    border-radius:12px;
-
-}
-
-
-
-.table-section h2{
-
-    margin-bottom:20px;
+    margin-top: 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
 
 }
 
 
 
-table{
+.table-section h2 {
 
-    width:100%;
-    border-collapse:collapse;
-
-}
-
-
-
-th{
-
-    background:black;
-    color:white;
-    padding:15px;
-    text-align:left;
+    margin-bottom: 20px;
 
 }
 
 
 
-td{
+table {
 
-    padding:15px;
-    border-bottom:1px solid #ddd;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+
+
+th {
+
+    background: black;
+    color: white;
+    padding: 15px;
+    text-align: left;
+
+}
+
+
+
+td {
+
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
 
 }

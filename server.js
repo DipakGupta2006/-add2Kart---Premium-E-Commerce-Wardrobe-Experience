@@ -168,37 +168,100 @@ app.get("/order-success", isAuthenticated, (req, res) => {
 
 
 // admin code
+const adminAuth = require("./middleware/adminAuth");
+
 
 app.get("/admin/login", (req, res) => {
     res.render("admin/login");
 });
 
-app.post("/admin/login", async(req,res)=>{
-    try{
-        const {email,password}=req.body;
+app.post("/admin/login", async (req, res) => {
+    try {
+        const { email, password } = req.body;
         const [result] = await pool.query(
             "SELECT * FROM admins WHERE email=?",
             [email]
         );
-        if(result.length === 0){
+        if (result.length === 0) {
             return res.send("Admin Email Not Found");
         }
-        const admin=result[0];
-        if(admin.password !== password){
+        const admin = result[0];
+        if (admin.password !== password) {
             return res.send("Wrong Password");
         }
+
+        req.session.admin = {
+            id: admin.id,
+            email: admin.email
+        };
         res.redirect("/admin/dashboard");
     }
-    catch(err){
+    catch (err) {
         console.log(err);
         res.send("Database Error");
     }
 });
 
-app.get("/admin/dashboard", (req, res) => {
-    res.render("admin/dashboard");
+app.get("/admin/logout",(req,res)=>{
+    delete req.session.admin;
+    res.redirect("/admin/login");
 });
 
+app.get("/admin/dashboard", adminAuth, async (req, res) => {
+
+    try {
+
+
+        const [users] = await pool.query(
+            "SELECT COUNT(*) AS totalUsers FROM users"
+        );
+
+
+        const [products] = await pool.query(
+            "SELECT COUNT(*) AS totalProducts FROM latest_collection"
+        );
+
+
+        const [orders] = await pool.query(
+            "SELECT COUNT(*) AS totalOrders FROM orders"
+        );
+
+
+        // Revenue calculation from VARCHAR price
+        const [revenue] = await pool.query(`
+            SELECT 
+            SUM(
+                CAST(REPLACE(total_amount,'₹','') AS DECIMAL(10,2))
+            ) AS totalRevenue
+            FROM orders
+        `);
+
+
+
+        res.render("admin/dashboard", {
+
+            totalUsers: users[0].totalUsers,
+
+            totalProducts: products[0].totalProducts,
+
+            totalOrders: orders[0].totalOrders,
+
+            totalRevenue: revenue[0].totalRevenue || 0
+
+        });
+
+
+    }
+    catch(err){
+
+        console.log(err);
+
+        res.send("Dashboard Error");
+
+    }
+
+
+});
 
 
 
