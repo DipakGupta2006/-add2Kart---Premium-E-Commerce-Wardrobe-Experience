@@ -409,6 +409,68 @@ app.get("/admin/orders", adminAuth, async (req,res)=>{
 });
 
 
+app.get("/admin/users", adminAuth, async (req, res) => {
+
+    try {
+
+
+        const [users] = await pool.query(`
+
+            SELECT
+
+            users.id,
+            users.username,
+            users.email,
+            users.role,
+            users.created_at,
+
+
+            user_addresses.full_name,
+            user_addresses.phone,
+            user_addresses.house_no,
+            user_addresses.street,
+            user_addresses.city,
+            user_addresses.state,
+            user_addresses.pincode,
+            user_addresses.landmark
+
+
+            FROM users
+
+
+            LEFT JOIN user_addresses
+
+            ON users.id = user_addresses.user_id
+
+
+            ORDER BY users.id DESC
+
+
+        `);
+
+
+
+        res.render("admin/users", {
+
+            users
+
+        });
+
+
+
+    }
+    catch(err){
+
+        console.log(err);
+
+        res.send("Users Fetch Error");
+
+    }
+
+
+});
+
+
 
 
 app.listen(port, () => {
